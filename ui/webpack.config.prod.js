@@ -42,12 +42,12 @@ module.exports = {
             moment: "moment"
         }),
         new CopyWebpackPlugin([
-            {from: './src/thingsboard.ico', to: 'thingsboard.ico'}
+            {from: './src/gspe.ico', to: 'gspe.ico'}
         ]),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: '../index.html',
-            title: 'ThingsBoard',
+            title: 'PT.Graha Sumber Prima Elektronik',
             inject: 'body',
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),
