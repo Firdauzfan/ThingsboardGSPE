@@ -67,7 +67,7 @@ function Menu(userService, $state, $rootScope) {
                             icon: 'home'
                         },
                         {
-                            name: 'Add On',
+                            name: 'plugin.plugins',
                             type: 'link',
                             state: 'home.plugins',
                             icon: 'extension'
@@ -79,7 +79,7 @@ function Menu(userService, $state, $rootScope) {
                             icon: 'settings_ethernet'
                         },
                         {
-                            name: 'Costumers',
+                            name: 'tenant.tenants',
                             type: 'link',
                             state: 'home.tenants',
                             icon: 'supervisor_account'
@@ -171,7 +171,7 @@ function Menu(userService, $state, $rootScope) {
                             icon: 'home'
                         },
                         {
-                            name: 'Add On',
+                            name: 'plugin.plugins',
                             type: 'link',
                             state: 'home.plugins',
                             icon: 'extension'
@@ -183,7 +183,7 @@ function Menu(userService, $state, $rootScope) {
                             icon: 'settings_ethernet'
                         },
                         {
-                            name: 'Sites',
+                            name: 'customer.customers',
                             type: 'link',
                             state: 'home.customers',
                             icon: 'supervisor_account'
