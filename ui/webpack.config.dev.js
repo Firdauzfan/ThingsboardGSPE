@@ -45,13 +45,13 @@ module.exports = {
             moment: "moment"
         }),
         new CopyWebpackPlugin([
-            { from: './src/gspe.ico', to: 'gspe.ico' }
+            { from: './src/VIOicon.png', to: 'VIOicon.png' }
         ]),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html',
-            title: 'PT.Graha Sumber Prima Elektronik',
+            title: 'PT.VIO Intelligence',
             inject: 'body',
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),

@@ -647,7 +647,7 @@ section.tb-footer-buttons {
 ***********************/
 .md-button.md-default-theme.md-primary.md-raised, .md-button.md-primary.md-raised, .md-button.md-default-theme.md-primary.md-fab, .md-button.md-primary.md-fab {
   color: rgba(255,255,255,0.87);
-  background-color: rgb(48,86,128);
+  background-color: rgb(33,47,57);
   border-radius: 40px;
 }
 
@@ -656,7 +656,7 @@ section.tb-footer-buttons {
 }
 
 md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
-  background-color: rgb(62, 91, 183);
+  background-color: rgb(33,47,57);
   color: rgba(255,255,255,0.87);
 }
 
@@ -670,10 +670,10 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 
 .md-button.md-default-theme.md-primary.md-fab, .md-button.md-default-theme.md-primary.md-raised, .md-button.md-primary.md-fab, .md-button.md-primary.md-raised {
   color: hsla(0,0%,100%,.87);
-  background-color: rgb(62, 91, 183);
+  background-color: rgb(33,47,57);
   border-radius: 40px;
 }
 
 md-card.md-tb-dark-theme {
-  background-color: rgb(62, 91, 183);
+  background-color: rgb(33,47,57);
 }
