@@ -1,5 +1,5 @@
 #*
- * Copyright © 2016-2017 The Thingsboard Authors
+ * Copyright © 2016-2017 PT VIO Intelligence Authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,7 +91,7 @@ background-color: #f6f6f6;
 								</tr>
 								<tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
 									<td class="content-block" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
-										&mdash; The Thingsboard
+										&mdash; PT VIO Intelligence
 									</td>
 								</tr></table></td>
 							</tr>
