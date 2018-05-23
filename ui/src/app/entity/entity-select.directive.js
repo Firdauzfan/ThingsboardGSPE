@@ -105,8 +105,7 @@ export default function EntitySelect($compile, $templateCache) {
         scope: {
             theForm: '=?',
             tbRequired: '=?',
-            disabled:'=ngDisabled',
-            useAliasEntityTypes: "=?"
+            disabled:'=ngDisabled'
         }
     };
 }

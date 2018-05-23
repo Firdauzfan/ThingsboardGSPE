@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import './entity-type-select.scss';
 
 /* eslint-disable import/no-unresolved, import/default */
@@ -38,7 +39,7 @@ export default function EntityTypeSelect($compile, $templateCache, utils, entity
 
         scope.ngModelCtrl = ngModelCtrl;
 
-        scope.entityTypes = entityService.prepareAllowedEntityTypesList(scope.allowedEntityTypes, scope.useAliasEntityTypes);
+        scope.entityTypes = entityService.prepareAllowedEntityTypesList(scope.allowedEntityTypes);
 
         scope.typeName = function(type) {
             return type ? types.entityTypeTranslations[type].type : '';
@@ -78,8 +79,7 @@ export default function EntityTypeSelect($compile, $templateCache, utils, entity
             theForm: '=?',
             tbRequired: '=?',
             disabled:'=ngDisabled',
-            allowedEntityTypes: "=?",
-            useAliasEntityTypes: "=?"
+            allowedEntityTypes: "=?"
         }
     };
 }

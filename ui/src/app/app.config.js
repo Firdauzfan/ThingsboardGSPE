@@ -49,7 +49,6 @@ export default function AppConfig($provide,
     $translateProvider.useSanitizeValueStrategy(null);
     $translateProvider.useMissingTranslationHandler('tbMissingTranslationHandler');
     $translateProvider.addInterpolation('$translateMessageFormatInterpolation');
-    $translateProvider.fallbackLanguage('en_US');
 
     addLocaleKorean(locales);
     addLocaleChinese(locales);

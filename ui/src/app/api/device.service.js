@@ -20,7 +20,7 @@ export default angular.module('thingsboard.api.device', [thingsboardTypes])
     .name;
 
 /*@ngInject*/
-function DeviceService($http, $q, $window, userService, attributeService, customerService, types) {
+function DeviceService($http, $q, attributeService, customerService, types) {
 
     var service = {
         assignDeviceToCustomer: assignDeviceToCustomer,
@@ -181,27 +181,14 @@ function DeviceService($http, $q, $window, userService, attributeService, custom
         return deferred.promise;
     }
 
-    function getDeviceCredentials(deviceId, sync) {
+    function getDeviceCredentials(deviceId) {
         var deferred = $q.defer();
         var url = '/api/device/' + deviceId + '/credentials';
-        if (sync) {
-            var request = new $window.XMLHttpRequest();
-            request.open('GET', url, false);
-            request.setRequestHeader("Accept", "application/json, text/plain, */*");
-            userService.setAuthorizationRequestHeader(request);
-            request.send(null);
-            if (request.status === 200) {
-                deferred.resolve(angular.fromJson(request.responseText));
-            } else {
-                deferred.reject();
-            }
-        } else {
-            $http.get(url, null).then(function success(response) {
-                deferred.resolve(response.data);
-            }, function fail() {
-                deferred.reject();
-            });
-        }
+        $http.get(url, null).then(function success(response) {
+            deferred.resolve(response.data);
+        }, function fail() {
+            deferred.reject();
+        });
         return deferred.promise;
     }
 

@@ -203,19 +203,6 @@ md-sidenav {
  * THINGSBOARD SPECIFIC
  ***********************/
 
-label {
-  &.tb-title {
-    pointer-events: none;
-    color: #666;
-    font-size: 13px;
-    font-weight: 400;
-    padding-bottom: 15px;
-    &.no-padding {
-      padding-bottom: 0px;
-    }
-  }
-}
-
 .tb-noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -651,4 +638,42 @@ section.tb-footer-buttons {
 
 .ace_editor {
   font-size: 16px !important;
+}
+
+
+
+/**********************
+* CUSTOM
+***********************/
+.md-button.md-default-theme.md-primary.md-raised, .md-button.md-primary.md-raised, .md-button.md-default-theme.md-primary.md-fab, .md-button.md-primary.md-fab {
+  color: rgba(255,255,255,0.87);
+  background-color: rgb(33,47,57);
+  border-radius: 40px;
+}
+
+.tb-card-item{
+  border-radius: 40px;
+}
+
+md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+  background-color: rgb(33,47,57);
+  color: rgba(255,255,255,0.87);
+}
+
+.md-button{
+  font-size:12px;
+}
+
+.md-headline{
+  font-size:20px;
+}
+
+.md-button.md-default-theme.md-primary.md-fab, .md-button.md-default-theme.md-primary.md-raised, .md-button.md-primary.md-fab, .md-button.md-primary.md-raised {
+  color: hsla(0,0%,100%,.87);
+  background-color: rgb(33,47,57);
+  border-radius: 40px;
+}
+
+md-card.md-tb-dark-theme {
+  background-color: rgb(33,47,57);
 }

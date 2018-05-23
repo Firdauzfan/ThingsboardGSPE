@@ -54,7 +54,6 @@ function UserService($http, $q, $rootScope, adminService, dashboardService, logi
         refreshJwtToken: refreshJwtToken,
         refreshTokenPending: refreshTokenPending,
         updateAuthorizationHeader: updateAuthorizationHeader,
-        setAuthorizationRequestHeader: setAuthorizationRequestHeader,
         gotoDefaultPlace: gotoDefaultPlace,
         forceDefaultPlace: forceDefaultPlace,
         updateLastPublicDashboardId: updateLastPublicDashboardId,
@@ -266,9 +265,9 @@ function UserService($http, $q, $rootScope, adminService, dashboardService, logi
             var pageLink = {limit: 100};
             var fetchDashboardsPromise;
             if (currentUser.authority === 'TENANT_ADMIN') {
-                fetchDashboardsPromise = dashboardService.getTenantDashboards(pageLink);
+                fetchDashboardsPromise = dashboardService.getTenantDashboards(pageLink, false);
             } else {
-                fetchDashboardsPromise = dashboardService.getCustomerDashboards(currentUser.customerId, pageLink);
+                fetchDashboardsPromise = dashboardService.getCustomerDashboards(currentUser.customerId, pageLink, false);
             }
             fetchDashboardsPromise.then(
                 function success(result) {
@@ -364,14 +363,6 @@ function UserService($http, $q, $rootScope, adminService, dashboardService, logi
         var jwtToken = store.get('jwt_token');
         if (jwtToken) {
             headers['X-Authorization'] = 'Bearer ' + jwtToken;
-        }
-        return jwtToken;
-    }
-
-    function setAuthorizationRequestHeader(request) {
-        var jwtToken = store.get('jwt_token');
-        if (jwtToken) {
-            request.setRequestHeader('X-Authorization', 'Bearer ' + jwtToken);
         }
         return jwtToken;
     }
