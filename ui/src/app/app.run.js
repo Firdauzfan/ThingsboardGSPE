@@ -20,7 +20,13 @@ import UrlHandler from './url.handler';
 export default function AppRun($rootScope, $window, $injector, $location, $log, $state, $mdDialog, $filter, loginService, userService, $translate) {
 
     $window.Flow = Flow;
-    var frame = $window.frameElement;
+    var frame = null;
+    try {
+        frame = $window.frameElement;
+    } catch(e) {
+        // ie11 fix
+    }
+
     var unauthorizedDialog = null;
     var forbiddenDialog = null;
 
@@ -129,7 +135,7 @@ export default function AppRun($rootScope, $window, $injector, $location, $log, 
             }
         })
 
-        $rootScope.pageTitle = 'PT.VIO Intelligence';
+        $rootScope.pageTitle = 'ThingsBoard';
 
         $rootScope.stateChangeSuccessHandle = $rootScope.$on('$stateChangeSuccess', function (evt, to, params) {
             if (userService.isPublic() && to.name === 'home.dashboards.dashboard') {
@@ -138,9 +144,9 @@ export default function AppRun($rootScope, $window, $injector, $location, $log, 
             }
             if (angular.isDefined(to.data.pageTitle)) {
                 $translate(to.data.pageTitle).then(function (translation) {
-                    $rootScope.pageTitle = 'PT.VIO Intelligence | ' + translation;
+                    $rootScope.pageTitle = 'ThingsBoard | ' + translation;
                 }, function (translationId) {
-                    $rootScope.pageTitle = 'PT.VIO Intelligence | ' + translationId;
+                    $rootScope.pageTitle = 'ThingsBoard | ' + translationId;
                 });
             }
         })

@@ -45,13 +45,13 @@ module.exports = {
             moment: "moment"
         }),
         new CopyWebpackPlugin([
-            { from: './src/VIOicon.png', to: 'VIOicon.png' }
+            { from: './src/thingsboard.ico', to: 'thingsboard.ico' }
         ]),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html',
-            title: 'PT.VIO Intelligence',
+            title: 'ThingsBoard',
             inject: 'body',
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),
