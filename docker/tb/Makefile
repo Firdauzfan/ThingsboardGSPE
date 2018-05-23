@@ -1,12 +1,10 @@
-VERSION=1.3.1
-PROJECT=firdauzfanani
-APP=application
+VERSION=1.4.0
+PROJECT=thingsboardsent
+
 
 build:
 	cp ../../application/target/thingsboard.deb .
-	docker build --pull -t ${PROJECT}/${APP}:${VERSION} -t ${PROJECT}/${APP}:latest .
+	docker build -t ${PROJECT}:${VERSION} .
 	rm thingsboard.deb
 
-push: build
-	docker push ${PROJECT}/${APP}:${VERSION}
-	docker push ${PROJECT}/${APP}:latest
+

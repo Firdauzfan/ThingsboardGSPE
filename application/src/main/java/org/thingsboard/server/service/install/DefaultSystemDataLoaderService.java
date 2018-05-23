@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.thingsboard.server.service.install;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -339,8 +338,10 @@ public class DefaultSystemDataLoaderService implements SystemDataLoaderService {
                             JsonNode dashboardJson = objectMapper.readTree(path.toFile());
                             Dashboard dashboard = objectMapper.treeToValue(dashboardJson, Dashboard.class);
                             dashboard.setTenantId(tenantId);
-                            dashboard.setCustomerId(customerId);
-                            dashboardService.saveDashboard(dashboard);
+                            Dashboard savedDashboard = dashboardService.saveDashboard(dashboard);
+                            if (customerId != null && !customerId.isNullUid()) {
+                                dashboardService.assignDashboardToCustomer(savedDashboard.getId(), customerId);
+                            }
                         } catch (Exception e) {
                             log.error("Unable to load dashboard from json: [{}]", path.toString());
                             throw new RuntimeException("Unable to load dashboard from json", e);
