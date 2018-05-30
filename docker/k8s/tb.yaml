@@ -82,7 +82,7 @@ spec:
       containers:
       - name: tb
         imagePullPolicy: Always
-        image: firdauzfanani/application
+        image: javierdvo/thingsent:latest
         ports:
         - containerPort: 8080
           name: ui
